@@ -1,8 +1,8 @@
 # Beginner Backend
 
-Minimal Express backend for beginners.
+Minimal Express backend with a simple frontend for beginners.
 
-Setup (Windows PowerShell):
+## Setup (Windows PowerShell)
 
 ```powershell
 npm install
@@ -11,14 +11,44 @@ npm start
 npm run dev
 ```
 
-Endpoints:
+## Features
 
-- `GET /` — simple welcome string
+### Backend API Endpoints
+
+- `GET /` — Simple welcome string
 - `GET /api/hello` — JSON greeting
-- `POST /api/echo` — echoes JSON body back as `{ received: <body> }`
+- `POST /api/echo` — Echoes JSON body back as `{ received: <body> }`
 
-Example POST with curl:
+### Frontend
+
+A single-page app at `http://localhost:3000` with buttons to test all API endpoints. No build step needed—just plain HTML, CSS, and JavaScript.
+
+## Testing API with curl (PowerShell)
 
 ```powershell
-curl -X POST http://localhost:3000/api/echo -H "Content-Type: application/json" -d "{ \"name\": \"Jane\" }"
+# Welcome
+curl http://localhost:3000/
+
+# Hello
+curl http://localhost:3000/api/hello
+
+# Echo (POST)
+curl -X POST http://localhost:3000/api/echo `
+  -H "Content-Type: application/json" `
+  -d '{ "name": "Jane" }'
+```
+
+## Project Structure
+
+```
+portfolio/
+├── index.js           # Express server
+├── package.json       # Dependencies
+├── vercel.json        # Vercel config
+├── public/
+│   ├── index.html     # Frontend UI
+│   ├── style.css      # Styling
+│   └── script.js      # API calls
+└── routes/
+    └── echo.js        # Echo endpoint
 ```

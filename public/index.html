@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beginner Backend - Frontend</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Beginner Backend API Tester</h1>
+    
+    <!-- Welcome Section -->
+    <div class="section">
+      <h2>1. Welcome Message</h2>
+      <button onclick="getWelcome()">Get Welcome</button>
+      <div id="welcomeResponse" class="response"></div>
+    </div>
+
+    <!-- Hello Section -->
+    <div class="section">
+      <h2>2. Hello Endpoint (GET)</h2>
+      <button onclick="getHello()">Get Hello</button>
+      <div id="helloResponse" class="response"></div>
+    </div>
+
+    <!-- Echo Section -->
+    <div class="section">
+      <h2>3. Echo Endpoint (POST)</h2>
+      <input type="text" id="echoInput" placeholder="Enter your name or message">
+      <button onclick="postEcho()">Send Echo</button>
+      <div id="echoResponse" class="response"></div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading">Loading...</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
